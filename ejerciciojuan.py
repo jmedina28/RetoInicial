@@ -19,13 +19,22 @@ def calculos():
             for x in range(0, n):
                 if tablero[i][x] != "r":
                     tablero[i][x] = "x"
-                if tablero[x][i] != "r":
-                    tablero[x][i] = "x"
+                if tablero[x][j] != "r":
+                    tablero[x][j] = "x"
             if a!=0 and b!=0:
-                while a != 0 or b != 0:
+                while a != 0 and b != 0:
                     a-=1
                     b-=1
                     tablero[a][b] = "x"
+            a = 0 + int(i)
+            b = 0 + int(j)
+            while a!=0 or b!=n-1:
+                if a!=0 and b!=n-1:
+                    a-=1
+                    b+=1
+                    tablero[a][b] = "x"
+                else:
+                    break
             a = 0 + int(i)
             b = 0 + int(j)
             if a!=n-1 and b!=n-1:
@@ -33,6 +42,15 @@ def calculos():
                     a+=1
                     b+=1
                     tablero[a][b] = "x"
+            a = 0 + int(i)
+            b = 0 + int(j)
+            while a!=n-1 or b!=0:
+                if a!=n-1 and b!=0:
+                    a+=1
+                    b-=1
+                    tablero[a][b] = "x"
+                else:
+                    break
             print(tablero)
             tablero = teclado(n)
 
