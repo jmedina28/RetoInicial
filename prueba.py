@@ -15,7 +15,7 @@ diccionario= {
 
 casilla = 1
 
-def recorrer1(nmov):
+def recorrer1():
     posibilidad1 = []
 
     
@@ -23,15 +23,25 @@ def recorrer1(nmov):
         posicion = i
         posibilidad1.append(diccionario[casilla][posicion])
     print(posibilidad1)
-    for j in range(nmov):   
-        for n in range(len(posibilidad1)):
-            posibilidad1.extend(diccionario[posibilidad1[n]])
-        
-        print(posibilidad1)
-        
-        print(len(posibilidad1)-len(diccionario[casilla]))
+    posibilidades_unicas = []
+    for o in posibilidad1:
+        if o not in posibilidades_unicas:
+            posibilidades_unicas.append(o)
+
+    print(posibilidades_unicas)
     
-recorrer1(2)
+    for n in range(len(posibilidades_unicas)):
+        posibilidad1.extend(diccionario[posibilidades_unicas[n]])
+        
+    print(posibilidad1)
+    for o in posibilidad1:
+        if o not in posibilidades_unicas:
+            posibilidades_unicas.append(o)
+    print(posibilidades_unicas)
+
+    print(len(posibilidad1)-len(diccionario[casilla]))
+    
+recorrer1()
 
 
     
