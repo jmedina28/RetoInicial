@@ -1,5 +1,5 @@
 
-recorrido = []
+posibilidad = []
 diccionario= {
         1: [8,6],
         2: [7,9],
@@ -13,23 +13,25 @@ diccionario= {
         0: [4,6]
     }
 
-def movimientos(casilla):
-    
+casilla = 0
+
+def recorrer1(nmov):
+    posibilidad1 = []
+    for p in range(nmov):
         for i in range(len(diccionario[casilla])):
             posicion = i
-            recorrido.append(diccionario[casilla][posicion])
-        return recorrido
+            posibilidad1.append(diccionario[casilla][posicion])
+        print(posibilidad1)
+        print(len(posibilidad1))
+        for n in range(len(posibilidad1)):
+            posibilidad1.extend(diccionario[posibilidad1[n]])
+     
+    print(posibilidad1)
+    
+    
+recorrer1(1)
 
 
-
-def recorrido_total(casilla):
-    recorrido_total = []
-    recorrido_total.append(movimientos(casilla))
-    for i in range(len(recorrido_total[i])):
-        for j in range(len(recorrido_total[i])):
-            recorrido_total.append(movimientos(recorrido))
-    return recorrido_total
-print(recorrido_total(1))
     
    
     
