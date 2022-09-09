@@ -11,11 +11,8 @@ numeros = {
     9: [2,2],
     0: [3,1],
 }  
-movimientos_totales = 0
 
-def caballo(movimientos, coords = [], iterative = False):
-    global movimientos_totales
-
+def caballo(movimientos, coords = [], movimientos_totales = 0, iterative = False):
     mov = movimientos
     n = 0
 
@@ -24,35 +21,29 @@ def caballo(movimientos, coords = [], iterative = False):
             for k in range(8):
                 movimiento = mover(coords)
                 if movimiento[k][0] >= 0 and movimiento[k][0] <= 2 and movimiento[k][1] >= 0 and movimiento[k][1] <= 2:
-                    print(movimiento[k])
                     movimientos_totales += 1
-                    if mov > 1:
-                        caballo(mov - 1, movimiento[k], True)
+                    iterative = False
                 elif movimiento[k] == [3, 1]:
-                    print(movimiento[k])
                     movimientos_totales += 1
-                    if mov > 1:
-                        caballo(mov - 1, movimiento[k], True)
+                    iterative = False
             mov -= 1
-        return
+        return(movimientos_totales)
 
     while n < 10 and iterative == False:
-        if coords == []:
-            coords = numeros[n]
-        movimiento = mover(coords)
+        coords = numeros[n]
 
         for i in range(8):
+            movimiento = mover(coords)
             if movimiento[i][0] >= 0 and movimiento[i][0] <= 2 and movimiento[i][1] >= 0 and movimiento[i][1] <= 2:
                 movimientos_totales += 1
-                print(movimiento[i])
                 if mov > 1:
-                    caballo(mov - 1, movimiento[i], True)
+                    movimientos_totales = caballo(mov - 1, mover(coords)[i], movimientos_totales, True)
             elif movimiento[i] == [3, 1]:
                 movimientos_totales += 1
-                print(movimiento[i])
                 if mov > 1:
-                    caballo(mov - 1, movimiento[i], True)
+                    movimientos_totales = caballo(mov - 1, mover(coords)[i], movimientos_totales, True)
         n += 1
+    print(movimientos_totales)
 
 def mover(coords):
     x = coords[0]
@@ -60,5 +51,5 @@ def mover(coords):
     movimientos_caballo = [[x+2, y+1], [x+2, y-1], [x-2, y+1], [x-2, y-1], [x+1, y+2], [x+1, y-2], [x-1, y+2], [x-1, y-2]]
     return movimientos_caballo
 
+
 caballo(2)
-print(movimientos_totales)
