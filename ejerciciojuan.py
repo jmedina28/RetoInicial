@@ -57,6 +57,14 @@ def calculos():
                 else:
                     break
             desplegartablero(tablero)
+            for fila in tablero:
+                contador=0
+                for z in range(0,n):
+                    if fila[z]=="x":
+                        contador+=1
+                if contador == n:
+                    print("No hay solucion")
+                    break
             tablero = teclado(n)
 
 calculos()
