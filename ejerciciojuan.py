@@ -8,8 +8,13 @@ def teclado(n):
             i+=[" "]
     return tablero
 
+def desplegartablero(tablero):
+    for i in tablero:
+        print(i)
+    print("____________________________________________________________________")
+
 def calculos():
-    n = int(input("¿Cuál es el tamaño del teclado?: "))
+    n = int(input("¿Cuál es el tamaño del tablero?: "))
     tablero = teclado(n)
     for i in range(0, n):
         for j in range(0, n):
@@ -51,7 +56,7 @@ def calculos():
                     tablero[a][b] = "x"
                 else:
                     break
-            print(tablero)
+            desplegartablero(tablero)
             tablero = teclado(n)
 
 calculos()
