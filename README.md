@@ -15,6 +15,7 @@ El código empleado para resolverlo es el siguiente:
 
 ```python
 
+
 posibilidad = []
 diccionario= {
         1: [8,6],
@@ -29,35 +30,57 @@ diccionario= {
         0: [4,6]
     }
 
-casilla = 1
+for u in range(len(diccionario)):
+    def recorrer1():
+        global posibilidad1
+        posibilidad1 = []
+        for i in range(len(diccionario[u])):
+            posicion = i
+            posibilidad1.append(diccionario[u][posicion])
+        return posibilidad1
 
-def recorrer1():
-    posibilidad1 = []
+    print(recorrer1()), print(len(posibilidad1))
 
+    def recorrer2():
+        global posibilidad2
+        posibilidad2 = []
+        for i in range(len(posibilidad1)):
+            posicion = i
+            posibilidad2.extend(diccionario[posibilidad1[posicion]])
+        return posibilidad2
+    print(recorrer2()), print(len(posibilidad2))
+
+    def recorrer3():
+        global posibilidad3
+        posibilidad3 = []
+        for i in range(len(posibilidad2)):
+            posicion = i
+            posibilidad3.extend(diccionario[posibilidad2[posicion]])
+        return posibilidad3
+    print(recorrer3()), print(len(posibilidad3))
+
+    def recorrer4():
+        global posibilidad4
+        posibilidad4 = []
+        for i in range(len(posibilidad3)):
+            posicion = i
+            posibilidad4.extend(diccionario[posibilidad3[posicion]])
+        return posibilidad4
+    print(recorrer4()), print(len(posibilidad4))
+
+    def recorrer5():
+        global posibilidad5
+        posibilidad5 = []
+        for i in range(len(posibilidad4)):
+            posicion = i
+            posibilidad5.extend(diccionario[posibilidad4[posicion]])
+        return posibilidad5
+    print(recorrer5()), print(len(posibilidad5))
+    posibilidad.extend(posibilidad5)
     
-    for i in range(len(diccionario[casilla])):
-        posicion = i
-        posibilidad1.append(diccionario[casilla][posicion])
-    print(posibilidad1)
-    posibilidades_unicas = []
-    for o in posibilidad1:
-        if o not in posibilidades_unicas:
-            posibilidades_unicas.append(o)
+    print("------------------------------------------------------------------")
+print("La cantidad de posibles combinaciones de 5 movimientos que se pueden realizar es: ", len(posibilidad))
 
-    print(posibilidades_unicas)
-    
-    for n in range(len(posibilidades_unicas)):
-        posibilidad1.extend(diccionario[posibilidades_unicas[n]])
-        
-    print(posibilidad1)
-    for o in posibilidad1:
-        if o not in posibilidades_unicas:
-            posibilidades_unicas.append(o)
-    print(posibilidades_unicas)
-
-    print(len(posibilidad1)-len(diccionario[casilla]))
-    
-recorrer1()
 ```
 
 <h2 align="center">Ejercicio de la Reina</h2>
