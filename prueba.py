@@ -1,5 +1,5 @@
 
-
+posibilidad = []
 diccionario= {
         1: [8,6],
         2: [7,9],
@@ -59,6 +59,8 @@ for u in range(len(diccionario)):
             posibilidad5.extend(diccionario[posibilidad4[posicion]])
         return posibilidad5
     print(recorrer5()), print(len(posibilidad5))
-
+    posibilidad.extend(posibilidad5)
+    
     print("------------------------------------------------------------------")
-# si sumas todos los valores que se encuentran antes de la linea divisoria obtienes el resultado de 5 movimientos.
+print("La cantidad de posibles combinaciones de 5 movimientos que se pueden realizar es: ", len(posibilidad))
+
