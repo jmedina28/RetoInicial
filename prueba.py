@@ -1,5 +1,5 @@
 
-posibilidad = []
+
 diccionario= {
         1: [8,6],
         2: [7,9],
@@ -13,7 +13,6 @@ diccionario= {
         0: [4,6]
     }
 
-casilla = diccionario[4]
 for u in range(len(diccionario)):
     def recorrer1():
         global posibilidad1
