@@ -40,7 +40,6 @@ def recorrer(nmov):
     # x
     for i in range(nmov-1):
         if i % 2 == 0:
-            print(x[i],y[i])
             x.append(x[i]+y[i])
         else:
             x.append(x[i]*2)
