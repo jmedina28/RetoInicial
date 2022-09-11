@@ -21,8 +21,7 @@ x = [2]
 y = [3]
 z = [2]
 j = [2]
-movimientos = 3
-#int(input("Introduce el número de movimientos que desea que incluya sus combinaciones: "))
+movimientos = int(input("Introduce el número de movimientos que desea que incluya sus combinaciones: "))
 # para completar las listas "y" y "z" tenemos que saber que se pueden generar cruzando datos entre ellas.
 # Para generar la lista "y" tenemos que saber que cuando el indice de la lista "y" es impar, el siguiente valor de la lista "y" será el doble del anterior
 # Cuando el indice sea par, el siguiente valor de la lista "y" vendrá dado por la suma del valor anterior multiplicado por 2 y el valor de la lista "z" en la misma posición.
@@ -30,6 +29,7 @@ movimientos = 3
 # Cuando el indice sea par, el siguiente valor de la lista "z" vendrá dado por la suma del valor anterior con el valor de la lista "y" en la misma posición.
 
 def recorrer(nmov):
+    # y, z
     for i in range(nmov-1):
         if i % 2 == 0: 
             y.append(y[i]*2)
@@ -37,24 +37,20 @@ def recorrer(nmov):
         else:
             y.append(y[i]*2 + z[i])
             z.append(y[i] + z[i])
-    # para la x teniendo ya la "y"
+    # x
     for i in range(nmov-1):
         if i % 2 == 0:
             print(x[i],y[i])
             x.append(x[i]+y[i])
         else:
             x.append(x[i]*2)
+    # j
     for i in range(nmov-1):
-        if i % 2 == 0: 
-            print("pasamos a un numero par")
-            j.append(y[i+1])
-            print(j)
-        else:
-            print("pasamos a un numero impar")
+        if i % 2 == 0:           
+            j.append(y[i+1])  
+        else:         
             j.append(j[i]*2)
-            print(j)
 
-    
 recorrer(movimientos)
-#print(x,y,z,j)
+print(x,y,z,j)
 print("La cantidad de combinaciones posibles de " + str(movimientos) + " es de " + str(x[-1]*4+y[-1]*2+z[-1]*2+j[-1]))
