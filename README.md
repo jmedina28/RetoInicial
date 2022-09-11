@@ -13,6 +13,8 @@ Pasemos a trabajar en otro ejemplo para fortalecer aún más nuestro pensamiento
 <img height="500" src="imagenes/1.png" />
 <br>
 
+Con esta resolución el código al menos en mi pc me permite ejecutar hasta las combinaciones de 10000 movimientos.
+
 El código empleado para resolverlo es el siguiente:
 
 ```python
