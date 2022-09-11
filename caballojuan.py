@@ -18,16 +18,34 @@ Podemos realizar una serie de observaciones:
 
 # Las listas que voy a crear van a ser las series de n cantidad de combinaciones posibles para i movimientos correspondientes a cada una de las casillas del tablero.
 x = [2]
-y = [3, 6 ,16 , 32, 84 ,168, 440, 880]
+y = [3]
 z = [2]
 j = [2]
 
-
-
-# para la x teniendo ya la "y"
-for i in range(1, 6):
-    if i % 2 == 0:
-        x.append(x[i-1]*2)
-    else:
-        x.append(x[i-1]+y[i-1])
+# para completar las listas "y" y "z" tenemos que saber que se pueden generar cruzando datos entre ellas.
+# Para generar la lista "y" tenemos que saber que cuando el indice de la lista "y" es impar, el siguiente valor de la lista "y" será el doble del anterior
+# Cuando el indice sea par, el siguiente valor de la lista "y" vendrá dado por la suma del valor anterior multiplicado por 2 y el valor de la lista "z" en la misma posición.
+# Para generar la lista "z" tenemos que saber que cuando el indice de la lista "z" es impar, el siguiente valor de la lista "z" será el doble del anterior
+# Cuando el indice sea par, el siguiente valor de la lista "z" vendrá dado por la suma del valor anterior con el valor de la lista "y" en la misma posición.
+def recorrer(nmov):
+    for i in range(nmov-1):
+        if i % 2 == 0: 
+            y.append(y[i]*2)
+            z.append(z[i]*2)
+        else:
+            y.append(y[i]*2 + z[i])
+            z.append(y[i] + z[i])
+    # para la x teniendo ya la "y"
+    for i in range(nmov-1):
+        if i % 2 == 0:
+            print("vamos a añadir un elemento par")
+            print(x[i],y[i])
+            x.append(x[i]+y[i])
+            print(x)
+        else:
+            print("vamos a añadir un elemento impar")
+            x.append(x[i]*2)
+recorrer(7)
 print(x)
+print(y)
+print(z)
