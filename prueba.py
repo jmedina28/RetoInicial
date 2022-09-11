@@ -32,7 +32,7 @@ for u in range(len(diccionario)):
             posibilidad2.extend(diccionario[posibilidad1[posicion]])
         return posibilidad2
     print(recorrer2()), print(len(posibilidad2))
-
+    
     def recorrer3():
         global posibilidad3
         posibilidad3 = []
@@ -59,8 +59,38 @@ for u in range(len(diccionario)):
             posibilidad5.extend(diccionario[posibilidad4[posicion]])
         return posibilidad5
     print(recorrer5()), print(len(posibilidad5))
-    posibilidad.extend(posibilidad5)
+
+    def recorrer6():
+        global posibilidad6
+        posibilidad6 = []
+        for i in range(len(posibilidad5)):
+            posicion = i
+            posibilidad6.extend(diccionario[posibilidad5[posicion]])
+        return posibilidad6
+    print(recorrer6()), print(len(posibilidad6))
+
+    def recorrer7():
+        global posibilidad7
+        posibilidad7 = []
+        for i in range(len(posibilidad6)):
+            posicion = i
+            posibilidad7.extend(diccionario[posibilidad6[posicion]])
+        return posibilidad7
+    print(recorrer7()), print(len(posibilidad7))
+
+    def recorrer8():
+        global posibilidad8
+        posibilidad8 = []
+        for i in range(len(posibilidad7)):
+            posicion = i
+            posibilidad8.extend(diccionario[posibilidad7[posicion]])
+        return posibilidad8
+    print(recorrer8()), print(len(posibilidad8))
+    
+
+    posibilidad.extend(posibilidad8)
+
     
     print("------------------------------------------------------------------")
-print("La cantidad de posibles combinaciones de 5 movimientos que se pueden realizar es: ", len(posibilidad))
+print("La cantidad de posibles combinaciones de 8   movimientos que se pueden realizar es: ", len(posibilidad))
 
