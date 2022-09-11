@@ -58,7 +58,6 @@ def recorrer(nmov):
     # x
     for i in range(nmov-1):
         if i % 2 == 0:
-            print(x[i],y[i])
             x.append(x[i]+y[i])
         else:
             x.append(x[i]*2)
@@ -72,7 +71,6 @@ def recorrer(nmov):
 recorrer(movimientos)
 print(x,y,z,j)
 print("La cantidad de combinaciones posibles de " + str(movimientos) + " es de " + str(x[-1]*4+y[-1]*2+z[-1]*2+j[-1]))
-
 ```
 
 <h2 align="center">Ejercicio de la Reina</h2>
