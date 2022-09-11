@@ -9,7 +9,9 @@ En este [repositorio](https://github.com/jmedina28/RetoInicial) queda resueltos 
 Pasemos a trabajar en otro ejemplo para fortalecer aún más nuestro pensamiento algorítmico, en este caso el problema de las n-reinas, el mismo consiste en ubicar n reinas en un tablero de ajedrez de tamaño n x n, sin que las mismas se amenacen. Recuerde que la reina desplaza de manera horizontal, vertical y diagonal como se puede observar en la figura 2, además podemos ver una solución al problema de las 4 reinas. Nótese que una parte importante para resolver un problema es de que manera representar la solución, para este caso particular usamos un vector de n posiciones (columnas) y el valor almacenado representa la fila donde se ubica dicha reina.
 
 ![image](https://user-images.githubusercontent.com/91721855/189431913-b1c5e72c-e279-47de-b348-dc41c31146f2.png)
-
+<br>
+<img height="500" src="imagenes/1.png" />
+<br>
 
 El código empleado para resolverlo es el siguiente:
 
@@ -72,6 +74,9 @@ recorrer(movimientos)
 print(x,y,z,j)
 print("La cantidad de combinaciones posibles de " + str(movimientos) + " es de " + str(x[-1]*4+y[-1]*2+z[-1]*2+j[-1]))
 ```
+<br>
+<img height="500" src="imagenes/IMG_2383.jpg" />
+<br>
 
 <h2 align="center">Ejercicio de la Reina</h2>
 
