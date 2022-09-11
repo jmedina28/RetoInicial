@@ -44,10 +44,12 @@ def recorrer(nmov):
             print(x)
         else:
             x.append(x[i]*2)
+    for i in range(nmov-1):
+        if i % 2 == 0: 
+            j.append(j[i]*2)
+        else:
+            j.append(y[i])
     
 recorrer(movimientos)
-print(x)
-print(y)
-print(z)
-print(j)
-print("La cantidad de combinaciones posibles de " + str(movimientos) + " es de " + str(x[-1]+y[-1]+z[-1]+j[-1]))
+print(x,y,z,j)
+print("La cantidad de combinaciones posibles de " + str(movimientos) + " es de " + str(x[-1]*4+y[-1]*2+z[-1]*2+j[-1]))
