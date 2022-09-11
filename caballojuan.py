@@ -1,3 +1,4 @@
+# Autor: Juan Antonio Pérez Medina
 # Gracias al código de prueba que realicé ayer, pude ver de mejor forma el patrón que existía en el tablero y la cantidad de 
 # n movimientos que se podían realizar desde cada una de las casillas.
 # Asi que considero que este código es mucho más eficiente que el anterior y que practicamente cualquiera que se pueda obtener para la resolución de este problema.
