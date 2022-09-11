@@ -18,6 +18,16 @@ Podemos realizar una serie de observaciones:
 
 # Las listas que voy a crear van a ser las series de n cantidad de combinaciones posibles para i movimientos correspondientes a cada una de las casillas del tablero.
 x = [2]
-y = [3]
+y = [3, 6 ,16 , 32, 84 ,168, 440, 880]
 z = [2]
 j = [2]
+
+
+
+# para la x teniendo ya la "y"
+for i in range(1, 6):
+    if i % 2 == 0:
+        x.append(x[i-1]*2)
+    else:
+        x.append(x[i-1]+y[i-1])
+print(x)
