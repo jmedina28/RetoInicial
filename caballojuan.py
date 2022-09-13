@@ -1,4 +1,4 @@
-# Autor: Juan Antonio Pérez Medina
+# Autor: Juan Antonio Pérez Medina.
 
 x, y, z, j, movimientos = [2], [3], [2], [2], int(input("Introduce el número de movimientos que desea que incluya sus combinaciones: "))
 
